@@ -1,0 +1,248 @@
+/*
+	@modCssClasses
+	@customTag: button-row
+	@customTag: buttons-box
+	@cssMod: mod_radioBlock
+	@cssMod: mod_smallIcon
+	--theme-transitionDuration 			0.15s
+	--theme-highlightedBackgroundColor 	rgba(0, 0, 0, 0.1)
+	--theme-mainFont 					rgba(0, 0, 0, 1)
+*/
+
+
+
+
+buttons-box {
+	box-shadow: 0 0 0 1px var(--theme-discreetBoxShadow, rgba(0, 0, 0, 0.2)) inset;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	overflow: hidden;
+	background-color: var(--theme-secondaryBackground, rgb(255, 255, 255));
+	transition-property: box-shadow, background-color;
+	transition-duration: var( --theme-transitionDuration, 0.15s );
+	display: block;
+}
+
+
+
+
+button-row {
+	display: flex;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	transition-property: background-color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+	cursor: pointer;
+	align-items: center;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 4rem;
+	margin-left: 0;
+	padding-top: 0.5rem;
+	padding-right: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.5rem;
+	min-height: 4rem;
+	gap: 1rem;
+}
+
+buttons-box button-row {
+	padding: 1rem;
+	border-bottom: solid 1px var(--theme-discreetBoxShadow, rgba(0, 0, 0, 0.2));
+	border-radius: 0;
+	transition-property: border-bottom, background-color;
+	transition-duration: var( --theme-transitionDuration, 0.15s );
+}
+
+buttons-box button-row:last-child {
+	border-bottom: medium none;
+}
+
+button-row.disabled {
+	cursor: unset;
+	opacity: 0.66;
+}
+
+button-row:hover, button-row.active {
+	background-color: var(--theme-highlightedBackgroundColor, rgba(0, 0, 0, 0.1));
+}
+
+button-row.disabled:hover, button-row.disabled.active {
+	background-color: unset;
+}
+
+button-row .imageWrap {
+	width: 5rem;
+	overflow: hidden;
+	position: relative;
+	height: 5rem;
+	min-width: 5rem;
+	max-width: 5rem;
+	transition-property: border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-right-radius;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+	border-top-left-radius: 500px;
+	border-top-right-radius: 500px;
+	border-bottom-right-radius: 500px;
+	border-bottom-left-radius: 500px;
+}
+
+button-row:hover .imageWrap {
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+
+button-row .imageWrap span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 5rem;
+	height: 5rem;
+	background-color: var(--theme-highlightedBackgroundColor, rgba(0, 0, 0, 0.1));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button-row .imageWrap span svg {
+	width: 2rem;
+	opacity: 0.66;
+}
+
+button-row .imageWrap img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 5rem;
+	height: 5rem;
+	object-position: center;
+	object-fit: cover;
+}
+
+button-row .text {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+button-row .text .title {
+	color: var(--theme-mainFont, rgba(0, 0, 0, 1));
+	transition-property: color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-weight: 600;
+}
+
+button-row .text .subtitle {
+	font-size: 0.8rem;
+	color: var(--theme-secondaryFont, rgba(0, 0, 0, 0.6));
+	display: inline-block;
+	transition-property: color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+button-row .text .subtitle b {
+	font-weight: 700;
+	color: var(--theme-secondaryFont, rgba(0, 0, 0, 0.6));
+	transition-property: color;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+button-row .icon {
+	display: flex;
+	min-width: 1.5rem;
+	height: 1.5rem;
+	max-width: 1.5rem;
+	width: 1.5rem;
+	justify-content: center;
+	align-items: center;
+}
+
+button-row.mod_smallIcon .icon {
+	min-width: 1.25rem !important;
+	width: 1.25rem !important;
+	max-width: 1.25rem !important;
+	height: 1.25rem !important;
+	margin-right: 1rem;
+}
+
+button-row .icon svg {
+	fill: var(--theme-mainFont, rgba(0, 0, 0, 1));
+	transition-property: fill;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+}
+
+button-row.disabled .icon svg {
+	opacity: 0.5;
+}
+
+
+
+
+.mod_radioBlock {
+	box-shadow: 0 0 0 1px var(--theme-discreetBoxShadow, rgba(0, 0, 0, 0.2)) inset;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	background-color: var(--theme-secondaryBackground, rgb(255, 255, 255));
+	transition-property: box-shadow, background-color;
+	transition-duration: var( --theme-transitionDuration, 0.15s );
+}
+
+.mod_radioBlock button-row {
+	padding: 1rem;
+	border-bottom: solid 1px var(--theme-discreetBoxShadow, rgba(0, 0, 0, 0.2));
+	border-radius: 0;
+	transition-property: border-bottom, background-color;
+	transition-duration: var( --theme-transitionDuration, 0.15s );
+}
+
+.mod_radioBlock button-row.css_binaryButton.failure {
+	background-color: var(--theme-errorBackgroundColor);
+}
+
+.mod_radioBlock button-row.css_binaryButton.success {
+	background-color: rgba(0, 255, 88, 0.25);
+}
+
+.mod_radioBlock button-row.css_decision {
+	border-bottom: solid 1px var(--theme-secondaryFont);
+}
+
+.mod_radioBlock button-row.disabled.success {
+	opacity: 1;
+}
+
+.mod_radioBlock button-row:last-child {
+	border-bottom: medium none;
+}
+
+.mod_radioBlock button-row .icon {
+	min-width: 1.75rem;
+	height: 1.75rem;
+	max-width: 1.75rem;
+	width: 1.75rem;
+}
+
+.mod_radioBlock button-row.success .icon svg {
+	fill: var(--theme-approveColor);
+	opacity: 1;
+}
+
+.mod_radioBlock button-row.css_binaryButton .icon svg {
+	fill: var(--theme-mainFont) !important;
+}
+
+.mod_radioBlock button-row .text .subtitle em {
+	font-style: normal;
+	font-weight: 600;
+	color: var(--theme-mainFont);
+	transition-property: color;
+	transition-duration: var(--theme-transitionDuration);
+}
