@@ -4,6 +4,8 @@
 	@customTag: buttons-box
 	@cssMod: mod_radioBlock
 	@cssMod: mod_smallIcon
+	@cssMod: mod_foldable
+	@cssMod: mod_disabled
 	--theme-transitionDuration 			0.15s
 	--theme-highlightedBackgroundColor 	rgba(0, 0, 0, 0.1)
 	--theme-mainFont 					rgba(0, 0, 0, 1)
@@ -138,6 +140,14 @@ button-row .text .title {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	font-weight: 600;
+}
+
+button-row.mod_foldable .text .title {
+	white-space: break-spaces;
+}
+
+button-row.mod_disabled .text .title {
+	color: var(--theme-secondaryFont, rgba(0, 0, 0, 0.6));
 }
 
 button-row .text .subtitle {
