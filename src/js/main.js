@@ -85,6 +85,11 @@ function ButtonRow( schema ) {
 
 
 
+    this._handleClickParentElem = this._evt_click_parentElem.bind( this );
+
+
+
+
     if ( typeof this._schema.parent === 'object' ) {
 
         this.parentElem = this._schema.parent;
@@ -166,7 +171,7 @@ function ButtonRow( schema ) {
 
     }
 
-    this.parentElem.addEventListener( 'click', this._evt_click_parentElem.bind( this ) );
+    this.parentElem.addEventListener( 'click', this._handleClickParentElem );
     this.parentElem.appendChild( fragment );
 
 };
