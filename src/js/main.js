@@ -90,7 +90,7 @@ function ButtonRow( schema ) {
 
 
 
-    if ( typeof this._schema.parent === 'object' ) {
+    if ( this._schema.parent instanceof HTMLElement ) {
 
         this.parentElem = this._schema.parent;
 
